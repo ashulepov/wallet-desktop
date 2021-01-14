@@ -1,0 +1,52 @@
+Index: Wallet/codegen/codegen/style/generator.cpp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Wallet/codegen/codegen/style/generator.cpp b/Wallet/codegen/codegen/style/generator.cpp
+--- a/Wallet/codegen/codegen/style/generator.cpp	(revision f6431b149b199238b5bd8f315c656780c1e3bcd1)
++++ b/Wallet/codegen/codegen/style/generator.cpp	(date 1610633099059)
+@@ -387,7 +387,7 @@
+ 	} else if (includes.isEmpty()) {
+ 		return true;
+ 	}
+-	for (const auto base : includes) {
++	for (const auto& base : includes) {
+ 		header_->include("styles/" + base + ".h");
+ 	}
+ 	header_->newline();
+@@ -1214,7 +1214,7 @@
+ 			<< png3x.width() << "x" << png3x.height();
+ 		return result;
+ 	}
+-	for (const auto modifierName : modifiers) {
++	for (const auto& modifierName : modifiers) {
+ 		if (const auto modifier = GetModifier(modifierName)) {
+ 			modifier(png1x);
+ 			modifier(png2x);
+Index: Wallet/lib_base/base/platform/mac/base_info_mac.mm
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Wallet/lib_base/base/platform/mac/base_info_mac.mm b/Wallet/lib_base/base/platform/mac/base_info_mac.mm
+--- a/Wallet/lib_base/base/platform/mac/base_info_mac.mm	(revision b61b9d29917b06bb383858e261d94712979d2cef)
++++ b/Wallet/lib_base/base/platform/mac/base_info_mac.mm	(date 1610633113474)
+@@ -43,7 +43,7 @@
+ 	}
+ 	QStringList words;
+ 	QString word;
+-	for (const QChar ch : model) {
++	for (const QChar& ch : model) {
+ 		if (!ch.isLetter()) {
+ 			continue;
+ 		}
+@@ -59,7 +59,7 @@
+ 		words.push_back(word);
+ 	}
+ 	QString result;
+-	for (const QString word : words) {
++	for (const QString& word : words) {
+ 		if (!result.isEmpty()
+ 			&& word != "Mac"
+ 			&& word != "Book") {
